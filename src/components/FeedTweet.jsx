@@ -1,10 +1,17 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
-function FeedTweet() {
-
+function FeedTweet(props) {
   return (
-    <p>feed tweet</p>
+    <div>
+      <p>{props.post}</p>
+      <hr/>
+    </div>
   );
 }
+
+FeedTweet.propTypes = {
+  post: PropTypes.string.isRequired
+};
 
 export default FeedTweet;

@@ -1,19 +1,22 @@
 import React from "react";
-import FeedHeading from "./FeedHeading";
 import FeedTweet from "./FeedTweet";
+import PropTypes from 'prop-types';
 
 
-function Feed() {
+
+function Feed(props) {
   return (
-    <div>
       <div>
-        <FeedHeading/>
+        {props.feed.map((feedTweet, index) =>
+          <FeedTweet post={feedTweet.post}
+            key={index}/>
+        )}
       </div>
-      <div>
-        <FeedTweet/>
-      </div>
-    </div>
   );
 }
+
+Feed.propTypes = {
+  feed: PropTypes.array
+};
 
 export default Feed;

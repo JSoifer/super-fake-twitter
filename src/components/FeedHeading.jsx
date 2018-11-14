@@ -1,7 +1,9 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Avatar from "./Avatar";
+import UserName from './UserName';
 
-function FeedHeading() {
+function FeedHeading(props) {
   const feedHeadingStyles = {
     display: "flex",
     width: "38vw",
@@ -22,9 +24,14 @@ function FeedHeading() {
           size="40x40"
         />
       </div>
-      <input style={inputStyle} type="text" placeholder="What's happening"></input>
+      <div>
+        <UserName />
+      </div>
+      <button onClick={props.onTweetFormDisplay}>Tweet Something?</button>
     </div>
   );
 }
-
+FeedHeading.propTypes = {
+  onTweetFormDisplay: PropTypes.func
+};
 export default FeedHeading;

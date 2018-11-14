@@ -1,10 +1,9 @@
 import React from "react";
 import Nav from "./Nav";
 import Bio from "./Bio";
-import Feed from "./Feed";
 import Suggestions from "./Suggestions";
 import Profile from "./Profile";
-
+import FeedContainer from './FeedContainer';
 
 function HomeView(){
 
@@ -50,12 +49,13 @@ function HomeView(){
           </div>
         </div>
         <div id="feed" style={column}>
-          <Feed/>
+          <FeedContainer/>
         </div>
         <div style={column}>
           <Suggestions/>
         </div>
       </div>
+      
     </div>
   );
 };
